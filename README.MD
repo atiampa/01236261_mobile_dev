@@ -1,4 +1,3 @@
-```mermaid
 graph TD
     %% Components
     Client[Client/Browser]
@@ -9,6 +8,7 @@ graph TD
     ConfigStore[Config File/Store]
     S3Bucket[AWS S3 Bucket]
     BackendDB[Backend Database]
+    Agent[Agent]
 
     %% Data Flows
     Client -->|View/Create Orders| ShoppingServer
@@ -18,7 +18,7 @@ graph TD
     AuthService -->|Users| BackendDB
     AuthService -->|UI Resources| S3Bucket
     BackendService --> AuthService
-    BackendService --> Agent[Agent]
+    BackendService --> Agent
     Agent -->|UI (static)| AuthService
 
     %% Boundaries
